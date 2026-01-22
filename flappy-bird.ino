@@ -17,11 +17,11 @@ int birdX = 30;
 int birdY = SCREEN_HEIGHT / 2;
 float birdVY = 0;
 const float gravity = 0.5;
-const float flap = -6;
+const float flap = -3;  // reduced flap distance
 
 // Pipes
 #define PIPE_W 10
-#define GAP_H 20
+#define GAP_H 30  // bigger gaps between pipes
 #define MAX_PIPES 3
 struct Pipe {
   int x;
