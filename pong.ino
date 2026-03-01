@@ -84,6 +84,7 @@ void loop() {
       ballY >= playerY &&
       ballY <= playerY + PADDLE_H) {
     ballVX = -ballVX;
+    score++;
   }
 
   // AI paddle collision
@@ -93,14 +94,9 @@ void loop() {
     ballVX = -ballVX;
   }
 
-  // Missed ball
-  if (ballX < 0) {
+  // Ball past left or right: reset for next rally
+  if (ballX < 0 || ballX >= SCREEN_WIDTH) {
     score = 0;
-    resetBall();
-  }
-
-  if (ballX > SCREEN_WIDTH) {
-    score++;
     resetBall();
   }
 
